@@ -1,11 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Widget Test Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Widget Test Page</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; }
+    header { padding: 16px 20px; border-bottom: 1px solid #eee; }
+
+    /* Контент страницы с embedded-виджетом (как было) */
+    .content {
+      padding: 16px 20px;
+    }
+
+    /* --- Ниже стили для “таба” slideout, если библиотека создаёт его сама ---
+       Пример: часто класс таба можно переопределить. Замените селектор под вашу библиотеку.
+       Если библиотека создаёт элемент с известным id/class, пропишите здесь.
+    */
+
+    /* Пример: фиксируем таб у левого края на середине экрана */
+    .rqp-slideout-tab {
+      position: fixed !important;
+      left: 0 !important;
+      top: 40% !important;
+      transform: translateY(-50%);
+      z-index: 9999;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    /* Если внутри есть кнопка */
+    .rqp-slideout-tab button {
+      cursor: pointer;
+    }
+
+    /* Если сама панель нужна слева (а не справа) */
+    .rqp-slideout-panel {
+      position: fixed !important;
+      left: 0 !important;
+      top: 0;
+      height: 100vh;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+      z-index: 9998;
+      background: #fff;
+      overflow: auto;
+    }
+  </style>
 </head>
 <body>
+  <header>
     <h1>My Project Widget</h1>
-    <script src="https://app.dev.roofle.coherentprojects.net/roof-quote-pro-embedded-widget.js?id=ZBJmMfHmNFNaLVAysIUrt" async></script>
+
+  </header>
+
+  <div class="content">
+    <!-- Embedded (как было) -->
+    <script src="https://app.dev.roofle.coherentprojects.net/roof-quote-pro-embedded-widget.js?id=ZBJmMfrt</script>
+  </div>
+
+  <!-- Slideout  <!-- Slideout виджет (скрипт, который создаёт таб/панель сам) -->
+  https://app.dev.roofle.coherentprojects.net/roof-quote-pro-widget.js?id=ZBJmMfHmNFNaLVAysIUrt</script>
 </body>
